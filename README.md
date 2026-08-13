@@ -1,74 +1,35 @@
 # Agenda Renata
 
-Sistema de lembretes e tarefas responsivo para gerenciar atividades diárias com categorias (Trabalho, Pessoal, Contas).
+Sistema de agenda pessoal e planejamento de aulas, feito para a Renata (professora de inglês). Duas abas: **Agenda** (lembretes do dia a dia) e **Aulas** (planejamento semanal por turma).
 
-## Características ✨
+🌐 **[Abrir Agenda Renata](https://brunorivero-afk.github.io/agenda-renata/)**
 
-- 📅 **Calendário interativo** — Navegue por meses e selecione datas
-- 📝 **Lembretes com formatação** — Negrito, itálico e sublinhado
-- 🏷️ **3 categorias** — Organize por Trabalho, Pessoal e Contas
-- ⏰ **Hora e recorrência** — Defina horários e lembretes recorrentes (diário, semanal, mensal)
-- ☑️ **Checklist** — Marque tarefas como concluídas
-- 🗑️ **Deletar rápido** — Botão de exclusão direto na card
-- 📱 **100% Responsivo** — Funciona perfeitamente em celular, tablet e desktop
-- 💾 **Armazenamento local** — Dados salvos no navegador (sem internet necessária)
+## Aba Agenda
 
-## Como usar
+- 📅 Calendário mensal interativo
+- 📝 Lembretes com 3 categorias: Trabalho, Pessoal, Contas
+- ⏰ Hora e recorrência (diária, semanal, mensal)
+- ✍️ Notas com formatação (negrito, itálico, sublinhado)
+- ☑️ Marcar como concluído
 
-1. Abra o arquivo `index.html` no seu navegador
-2. Clique em **+ Novo** para criar um lembrete
-3. Preencha os detalhes:
-   - Título do lembrete
-   - Data desejada
-   - Hora (opcional)
-   - Categoria (Trabalho, Pessoal ou Contas)
-   - Recorrência (sem recorrência, diária, semanal, mensal)
-   - Notas com formatação
+## Aba Aulas — Planejamento de Aulas
 
-4. Clique em uma **data no calendário** para ver os lembretes daquele dia
-5. **Marque como concluído** (✓) ou **delete** (×) conforme necessário
+- Matriz: turmas (linhas) × dias da semana, segunda a sexta
+- Navegação por semana (← →)
+- **Turmas editáveis** — renomear, excluir ou adicionar direto na matriz
+- **Feriados nacionais automáticos** (fixos + Páscoa/Carnaval/Corpus Christi calculados), sem precisar de API externa
+- Edição direto na célula (sem modal): Livro/Página, Unidade, Conteúdo/Tópicos, Objetivos, Metodologia, Recursos, Homework, Avaliação
 
-## Formatação de notas
+## Sincronização
 
-Na seção de notas, você tem **3 botões**:
-- **B** — Negrito
-- **I** — Itálico  
-- **U** — Sublinhado
+Dados sincronizam automaticamente entre aparelhos via [Supabase](https://supabase.com), sem exigir login — abre e já sincroniza sozinho em segundo plano. `localStorage` funciona como cache local (o app funciona offline, sincroniza quando volta a conexão).
 
-Selecione o texto e clique no botão para aplicar a formatação.
-
-## Layout
-
-- **Calendário** (lado esquerdo) — Navegue entre meses
-- **3 colunas** (lado direito) — Trabalho | Pessoal | Contas
-- Clique na data → colunas mostram lembretes daquele dia
+Setup do banco: ver [`supabase_setup.sql`](supabase_setup.sql).
 
 ## Tecnologia
 
-- HTML5 + CSS3 + JavaScript Vanilla
-- LocalStorage para persistência de dados
-- Design responsivo com Media Queries
-- Sem dependências externas
-- Totalmente offline
-
-## Requisitos
-
-- Navegador moderno com suporte a:
-  - LocalStorage
-  - CSS Grid
-  - Flexbox
-  - JavaScript ES6+
-
-## Armazenamento
-
-Todos os seus lembretes são salvos **localmente no navegador**. Isso significa:
-- ✅ Funciona offline
-- ✅ Seus dados são privados (não saem do seu dispositivo)
-- ⚠️ Se você limpar o histórico/cache do navegador, os lembretes podem ser perdidos
-
-## Acesso online
-
-🌐 [Abrir Agenda Renata](https://brunorivero-afk.github.io/agenda-renata/)
+- HTML5 + CSS3 + JavaScript puro (sem build, sem dependências além do cliente Supabase via CDN)
+- 100% responsivo (desktop, tablet, mobile)
 
 ---
 
