@@ -1,0 +1,11 @@
+{
+  "name": "Agenda Renata",
+  "short_name": "Agenda Renata",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f5f5",
+  "theme_color": "#2563eb",
+  "icons": [
+    { "src": "icon-180.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
