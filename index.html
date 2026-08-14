@@ -1715,6 +1715,9 @@
 
         async function pullSync() {
             if (_pendingLocalChange) return; // evita sobrescrever uma alteração local ainda não enviada
+            if (editingAulaKey !== null || editingTurmaIndex !== null) return; // não interromper edição aberta na matriz de aulas
+            const modalEl = document.getElementById('modal');
+            if (modalEl && modalEl.classList.contains('active')) return; // não interromper o modal de lembrete aberto
             try {
                 const { data, error } = await _sb
                     .from('renata_agenda_sync')
